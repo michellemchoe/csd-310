@@ -34,7 +34,7 @@ cursor = db.cursor()
 
 print("-- DISPLAYING studio RECORDS --")
 
-cursor.execute("SELECT * from studio")
+cursor.execute("SELECT * FROM studio")
 studio = cursor.fetchall()
 
 for studio in studio:
@@ -43,9 +43,18 @@ for studio in studio:
 
 print("-- DISPLAYING genre RECORDS --")
 
-cursor.execute("SELECT * from genre")
+cursor.execute("SELECT * FROM genre")
 genre = cursor.fetchall()
 
 for genre in genre:
     print("Genre ID: {}\nGenre Name: {}\n".format(genre[0], genre[1]))
+    
+    
+print("-- DISPLAYING short film RECORDS --")
+
+cursor.execute("SELECT film_name, film_runtime FROM film WHERE film_runtime < 120")
+shortFilm = cursor.fetchall()
+
+for shortFilm in shortFilm:
+    print("Film Name: {}\nRuntime: {}\n".format(shortFilm[0], shortFilm[1]))
 
