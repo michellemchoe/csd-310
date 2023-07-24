@@ -25,7 +25,27 @@ except mysql.connector.Error as err:
     
     else:
         print(err)
-        
-finally:
-    db.close()
+
+
+    
+            
+cursor = db.cursor()
+
+
+print("-- DISPLAYING studio RECORDS --")
+
+cursor.execute("SELECT * from studio")
+studio = cursor.fetchall()
+
+for studio in studio:
+    print("Studio ID: {}\nStudio Name: {}\n".format(studio[0], studio[1]))
+
+
+print("-- DISPLAYING genre RECORDS --")
+
+cursor.execute("SELECT * from genre")
+genre = cursor.fetchall()
+
+for genre in genre:
+    print("Genre ID: {}\nGenre Name: {}\n".format(genre[0], genre[1]))
 
