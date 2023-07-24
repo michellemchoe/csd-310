@@ -2,9 +2,9 @@ import mysql.connector
 from mysql.connector import errorcode
 
 config = {
-    "user": "movies_user",
-    "password": "popcorn",
-    "host": "127.0.0.1",
+    "user": "root",
+    "password": "Ms-259631",
+    "host": "localhost",
     "database": "movies",
     "raise_on_warnings": True
 }
